@@ -16,10 +16,15 @@ WORKDIR $RLM_PREFIX
 RUN pwd
 
 	
-ADD rlm.tgz rlm.tgz
-RUN tar -zxvf rlm.tgz
+COPY rlm.tgz rlm.tgz
+
+RUN ls -alh
+
+RUN tar -xvf rlm.tgz
 RUN mv x64_l1.admin rlm 
-ADD rlm.sh rlm/rlm.sh
+COPY rlm.sh rlm/rlm.sh
+
+RUN chmod +x rlm/rlm.sh
 
 VOLUME /opt/rlm/licenses
 VOLUME /opt/rlm/logs
