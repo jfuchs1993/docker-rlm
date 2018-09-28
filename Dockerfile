@@ -17,7 +17,7 @@ RUN pwd
 
 	
 ADD rlm.tgz rlm.tgz
-RUN tar -xvf rlm.tgz
+RUN tar -zxvf rlm.tgz
 RUN mv x64_l1.admin rlm 
 ADD rlm.sh rlm/rlm.sh
 
