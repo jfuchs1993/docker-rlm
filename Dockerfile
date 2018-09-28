@@ -12,11 +12,14 @@ RUN buildDeps=' \
 ENV RLM_PREFIX /opt
 RUN mkdir -p "$RLM_PREFIX"
 WORKDIR $RLM_PREFIX
+
+RUN pwd
+
 	
-ADD rlm.tgz /opt/rlm.tgz
+ADD rlm.tgz rlm.tgz
 RUN tar -xvf rlm.tgz
 RUN mv x64_l1.admin rlm 
-ADD rlm.sh /opt/rlm/rlm.sh
+ADD rlm.sh rlm/rlm.sh
 
 VOLUME /opt/rlm/licenses
 VOLUME /opt/rlm/logs
